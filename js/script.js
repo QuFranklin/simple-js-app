@@ -18,9 +18,9 @@ let pokemonList = [
 
 for (let i=0; i < pokemonList.length; i++) {
     if (pokemonList[i].height > 5) {
-        document.write(pokemonList[i].name + '[Type:' + ' ' + pokemonList[i].type + ', ' + 'Height:' + ' ' + pokemonList[i].height + ']' + " - It's a BIG pokemon!");
+        document.write(pokemonList[i].name + ' (Type:' + ' ' + pokemonList[i].type + ') ' + '(Height:' + ' ' + pokemonList[i].height + ')' + " - It's a BIG pokemon!");
     }
     else {
-        document.write(pokemonList[i].name + '[Type:' + ' ' + pokemonList[i].type + ', ' + 'Height:' + ' ' + pokemonList[i].height + '] ');
+        document.write(pokemonList[i].name + ' (Type:' + ' ' + pokemonList[i].type + ') ' + '(Height:' + ' ' + pokemonList[i].height + ') ' + "<br>");
     }
 }
