@@ -55,26 +55,25 @@ let pokemonRepository = (function() {
         }
         
         function showDetails(pokemon) {
-            console.log("Name: " + pokemon.name, '\n'+ "Type: " + pokemon.type, '\n'+ "Height: " + pokemon.height);
+            console.log("Name: " + pokemon.name, '\n'+ "Type: " + pokemon.type, '\n'+ "Height: " + pokemon.height); 
         }
         
 
         function addListItem(pokemon) {
-            let pokemonList = document.querySelector(".pokemon-list");
-            let listItem = document.createElement("li");
-            let button = document.createElement("button");
-            button.innerText = pokemon.name;
-            button.classList.add("button-class");
-            listItem.appendChild(button);
-            pokemonList.appendChild(listItem);
-            listItem.appendChild(button);
-            pokemonList.appendChild(listItem);
-
+            let pokemonList = document.querySelector(".pokemon-list"); // select pokemon-list ul class
+            let listItem = document.createElement("li"); // create li element in ul class
+            let button = document.createElement("button"); // create button 
+            button.innerText = pokemon.name; // pokemon name display in button
+            button.classList.add("button-class"); // add button class (can style button in css)
+            listItem.appendChild(button); // append button to li
+            pokemonList.appendChild(listItem); // append pokemon to ul
+          
             button.addEventListener("click", function() {
-                showDetails(pokemon);
+                showDetails(pokemon); // when user click, show all details of pokemons
             });
         }
         
+        // Call all function in return 
         return {
             getAll,
             add,
