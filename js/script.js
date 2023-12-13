@@ -1,6 +1,6 @@
 //let pokemonList = [
 //    {
-//        name: 'Cloyster', 
+//      name: 'Cloyster', 
 //      type: 'Water/Ice', 
 //      height: 4
 //  },
@@ -31,47 +31,64 @@ let pokemonRepository = (function() {
               name: 'Cloyster', 
               type: ["Water", " Ice"], 
               height: 4,
-              size: false,
-          },
-          {
+            },
+           {
               name: 'Charizard',
               type: ["Fire", " Flying"],
               height: 5,
-              size: false,
-          },
-          {
+              
+           },
+           {
               name: 'Snorlax', 
               type: ["Normal"],
               height: 6,
-              size: true,
-          }
+              
+           }
         ];
-    
+        
         function add (pokemon) {
             pokemonList.push(pokemon);
-        }
+        }            
 
         function getAll () {
            return pokemonList;
         }
         
+        function showDetails(pokemon) {
+            console.log("Name: " + pokemon.name, '\n'+ "Type: " + pokemon.type, '\n'+ "Height: " + pokemon.height);
+        }
+        
+
+        function addListItem(pokemon) {
+            let pokemonList = document.querySelector(".pokemon-list");
+            let listItem = document.createElement("li");
+            let button = document.createElement("button");
+            button.innerText = pokemon.name;
+            button.classList.add("button-class");
+            listItem.appendChild(button);
+            pokemonList.appendChild(listItem);
+            listItem.appendChild(button);
+            pokemonList.appendChild(listItem);
+
+            button.addEventListener("click", function() {
+                showDetails(pokemon);
+            });
+        }
+        
         return {
-           getAll,
+            getAll,
             add,
+            addListItem,
         };
-    
     })();
     
+
+
     pokemonRepository.getAll().forEach(function(pokemon) {
-        if (pokemon.size == true)
-            document.write(pokemon.name + ' (Type:' + ' ' + pokemon.type + ') ' + '(Height:' + ' ' + pokemon.height + ') ' + " - It's a BIG pokemon!");
-            //console.log(pokemon.name + ' (Type:' + ' ' + pokemon.type + ') ' + '(Height:' + ' ' + pokemon.height + ') ' + " - It's a BIG pokemon!");
-        else {
-            document.write(pokemon.name + ' (Type:' + ' ' + pokemon.type + ') ' + '(Height:' + ' ' + pokemon.height + ') ' + "<br>");
-            //console.log(pokemon.name + ' (Type:' + ' ' + pokemon.type + ') ' + '(Height:' + ' ' + pokemon.height + ') ');
-        }
+        pokemonRepository.addListItem(pokemon);
     });
 
+    
             
 
 

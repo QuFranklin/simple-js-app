@@ -1,3 +1,14 @@
-.pokemon {
-    line-height: 2;
+.button-class {
+    background-color: lightgrey;
+    border: none;
+    color: black;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 16px 32px;
+    margin: 10px 10px;
+    border: 2px solid black;
+    border-radius: 20px;
+    cursor: pointer;
 }
