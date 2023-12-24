@@ -7,14 +7,18 @@
     <title>Simple JS App</title>
   </head>
   <body>
-    <div>
-      <main id="container"></main>
-      <h1>Pokedex</h1>
-      <ul class="pokemon-list"></ul>
+      <div>
+        <h1>Pokedex</h1>
+            <div id="container">
+            <button class="modal-close"></button>
+            <ul class="pokemon-list"></ul>
+            <div id="modal-container"></div>
+            </div>
+      </div>  
+      
       
       <script src="js/promise-polyfill.js"></script>
       <script src="js/fetch-polyfill.js"></script>
       <script src="js/script.js"></script>
-    </div>
   </body>
 </html>
