@@ -48,6 +48,7 @@ let pokemonRepository = (function() {
             imageElementFront.attr("src", pokemon.imageUrlFront);
             let imageElementBack = $('<img class="modal-img" style="width:50%">');
             imageElementBack.attr("src", pokemon.imageUrlBack);
+            
             let heightElement = $("<p>" + "height : " + pokemon.height + "</p>");
             
             let weightElement = $("<p>" + "weight : " + pokemon.weight + "</p>");
